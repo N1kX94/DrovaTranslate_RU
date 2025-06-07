@@ -27,3 +27,10 @@ NoFood_Desc { Съешьте что-нибудь, чтобы наполнить 
 waterbarrel { Вода }
 
 waterbarrel_description { Восстанавливает здоровье за ​​короткий промежуток времени. }
+
+HealReduction { Боль Болота }
+
+HealReduction_Desc { Уменьшает получаемое исцеление на [ValuePercent]. }
+
+BlackPuddle_Name { Кровь Болота }
+

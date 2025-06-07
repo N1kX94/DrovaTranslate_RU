@@ -201,3 +201,8 @@ Achievement_ClassicMode_desc { Завершить Дрову в Классиче
 Achievement_InsaneMode_name { Безумие }
 
 Achievement_InsaneMode_desc { Завершите Дрова в режиме "Безумие". Не засчитывается в базовые достижения. }
+
+Achievement_DefeatedFleshBoss_name { Освободите Божество в Кнавдском Болоте. }
+
+Achievement_DefeatedFleshBoss_desc { Убедитесь, что Кнавдское Болото может восстановиться. Не засчитывается в базовые достижения. }
+
