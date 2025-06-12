@@ -664,9 +664,9 @@ key_tristanBillKey_name { Ключ к Верхней Таверне }
 
 key_tristanBillKey_description { Ключ к двери на верхний этаж в таверне Олафа. }
 
-key_ruinenexplorer_name { Ключ Руинных Налетчиков }
+key_ruinenexplorer_name { Ключ Расхитителей Руин }
 
-key_ruinenexplorer_description { Открывает дверь к Руинным Налетчикам. }
+key_ruinenexplorer_description { Открывает дверь к Расхитителям Руин. }
 
 cons_Familiar_Firefly_description { Моя искрометная маленькая Искра. Она следует за мной, куда бы я ни пошел. }
 
@@ -1954,7 +1954,7 @@ item_trinket_boxer_description { Ваши безоружные атаки все
 
 item_bigligering_name { Кольцо Иггдрасиля }
 
-item_bigligering_description { }
+item_bigligering_description {  }
 
 recipe_yggdrasil_name { Рецепт: Кольцо Иггдрасиля }
 
@@ -1982,7 +1982,7 @@ item_Map_Treasure_Heath_name { Сокровище: Пустошь }
 
 item_Map_Treasure_PrimevalForest_name { Сокровище: Первобытный Лес }
 
-item_Map_Treasure_Rotmoor_name { Сокровище: Красные болота }
+item_Map_Treasure_Rotmoor_name { Сокровище: Красные Болота }
 
 item_Map_Treasure_WayToMine_name { Сокровище: Путь к Шахте }
 
