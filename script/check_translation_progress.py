@@ -145,7 +145,8 @@ def parse_loc_file(file_path):
     
     try:
         # Регулярное выражение для поиска записей типа "key { value }"
-        pattern = r'(\w+)\s*\{\s*([^}]*)\s*\}'
+        # Учитываем невидимые символы Unicode (например, zero-width space)
+        pattern = r'(\w+)[\s\u200b\u200c\u200d\ufeff]*\{[\s\u200b\u200c\u200d\ufeff]*([^}]*)[\s\u200b\u200c\u200d\ufeff]*\}'
         matches = re.findall(pattern, content, re.MULTILINE | re.DOTALL)
         
         for key, value in matches:
