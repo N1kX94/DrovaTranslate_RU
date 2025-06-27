@@ -1,17 +1,17 @@
 # 🇷🇺 Отчет о прогрессе перевода Drova
 
-**Дата создания:** 2025-06-27 12:53:22
+**Дата создания:** 2025-06-27 12:54:51
 
 ## 📊 Общая статистика
 
 | Метрика | Значение |
 |---------|----------|
 | 📁 Всего файлов | 485 |
-| ✅ Файлов с переводом | 484 |
+| ✅ Файлов с переводом | 485 |
 | ❌ Файлов без перевода | 0 |
 | 🔤 Всего строк | 22022 |
-| ✅ Переведено строк | 22018 |
-| ❌ Не переведено | 5 |
+| ✅ Переведено строк | 22022 |
+| ❌ Не переведено | 1 |
 | ❓ Отсутствующих строк | 0 |
 | 📈 **Общий прогресс** | **100.0%** |
 
@@ -24,7 +24,6 @@
 
 | Файл | Прогресс | Переведено | Не переведено | Отсутствует |
 |------|----------|------------|---------------|-------------|
-| ❌ `Playtest_Temp_en.loc` | 0.0% | 0 | 4 | 0 |
 | 🔄 `Option_GUI_en.loc` | 99.3% | 140 | 1 | 0 |
 | ✅ `Achievements_en.loc` | 100.0% | 104 | 0 | 0 |
 | ✅ `AreaNames_en.loc` | 100.0% | 30 | 0 | 0 |
@@ -495,6 +494,7 @@
 | ✅ `NPC_Names/WellLadder_en.loc` | 100.0% | 14 | 0 | 0 |
 | ✅ `NemetonWorldDialog_en.loc` | 100.0% | 56 | 0 | 0 |
 | ✅ `NewWorldDialog_en.loc` | 100.0% | 106 | 0 | 0 |
+| ✅ `Playtest_Temp_en.loc` | 100.0% | 4 | 0 | 0 |
 | ✅ `RedTower_EndSequence_en.loc` | 100.0% | 162 | 0 | 0 |
 | ✅ `RestWorldDialogue_en.loc` | 100.0% | 355 | 0 | 0 |
 | ✅ `Talents_en.loc` | 100.0% | 105 | 0 | 0 |
@@ -513,17 +513,6 @@
 ## 🔍 Детали по непереведенным строкам
 
 *Файлы отсортированы по количеству непереведенных строк*
-
-### `Playtest_Temp_en.loc` (4 проблем)
-
-#### ❌ Непереведенные строки (4)
-
-| Ключ | Английский | Русский (проблема) |
-|------|------------|--------------------|
-| `Plh_141` | This is where the demo ends. | This is where the demo ends. |
-| `DisclaimerText` | We, here at Just2D, are still in the process of finalizing Drova. That's why most content is still a work in progress and potentially subject to change.<br><br>This demo contains only a small part of Drova which can be explored within approximately eight hours of playtime. For the demo, not every region can be entered just yet.<br><br>The localization into English is still in its first iteration.<br>If you come across any spelling mistakes, typos, or odd phrasings, please don't hesitate to report them to us.<br>Simply press <b>F2</b> anytime during gameplay. A window will open in which you can type your observations, bug reports, and feedback.<br><br><br>Enjoy your journey into the world of Drova!<br>Brian, Christian, Fabio, Kai, Johannes, and Julian. | We, here at Just2D, are still in the process of finalizing Drova. That's why most content is still a work in progress and potentially subject to change.<br><br>This demo contains only a small part of Drova which can be explored within approximately eight hours of playtime. For the demo, not every region can be entered just yet.<br><br>The localization into English is still in its first iteration.<br>If you come across any spelling mistakes, typos, or odd phrasings, please don't hesitate to report them to us.<br>Simply press <b>F2</b> anytime during gameplay. A window will open in which you can type your observations, bug reports, and feedback.<br><br><br>Enjoy your journey into the world of Drova!<br>Brian, Christian, Fabio, Kai, Johannes, and Julian. |
-| `HaveFun` | Enjoy this demo! | Enjoy this demo! |
-| `Okay` | Okay | Okay |
 
 ### `Option_GUI_en.loc` (1 проблем)
 
