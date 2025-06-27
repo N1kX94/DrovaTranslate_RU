@@ -1,6 +1,6 @@
 # 🇷🇺 Отчет о прогрессе перевода Drova
 
-**Дата создания:** 2025-06-27 12:48:48
+**Дата создания:** 2025-06-27 12:53:22
 
 ## 📊 Общая статистика
 
@@ -10,9 +10,9 @@
 | ✅ Файлов с переводом | 484 |
 | ❌ Файлов без перевода | 0 |
 | 🔤 Всего строк | 22022 |
-| ✅ Переведено строк | 22017 |
+| ✅ Переведено строк | 22018 |
 | ❌ Не переведено | 5 |
-| ❓ Отсутствующих строк | 1 |
+| ❓ Отсутствующих строк | 0 |
 | 📈 **Общий прогресс** | **100.0%** |
 
 ### 📊 Визуальный прогресс
@@ -26,7 +26,6 @@
 |------|----------|------------|---------------|-------------|
 | ❌ `Playtest_Temp_en.loc` | 0.0% | 0 | 4 | 0 |
 | 🔄 `Option_GUI_en.loc` | 99.3% | 140 | 1 | 0 |
-| 🔄 `Dialog/NPC_Diemo_en.loc` | 99.7% | 293 | 0 | 1 |
 | ✅ `Achievements_en.loc` | 100.0% | 104 | 0 | 0 |
 | ✅ `AreaNames_en.loc` | 100.0% | 30 | 0 | 0 |
 | ✅ `BeehiveDialogue_en.loc` | 100.0% | 14 | 0 | 0 |
@@ -115,6 +114,7 @@
 | ✅ `Dialog/NPC_Darwin_en.loc` | 100.0% | 163 | 0 | 0 |
 | ✅ `Dialog/NPC_Delani_en.loc` | 100.0% | 97 | 0 | 0 |
 | ✅ `Dialog/NPC_Der Ripper_en.loc` | 100.0% | 28 | 0 | 0 |
+| ✅ `Dialog/NPC_Diemo_en.loc` | 100.0% | 294 | 0 | 0 |
 | ✅ `Dialog/NPC_Doro_en.loc` | 100.0% | 54 | 0 | 0 |
 | ✅ `Dialog/NPC_Drax_en.loc` | 100.0% | 21 | 0 | 0 |
 | ✅ `Dialog/NPC_Dunja_en.loc` | 100.0% | 38 | 0 | 0 |
@@ -524,14 +524,6 @@
 | `DisclaimerText` | We, here at Just2D, are still in the process of finalizing Drova. That's why most content is still a work in progress and potentially subject to change.<br><br>This demo contains only a small part of Drova which can be explored within approximately eight hours of playtime. For the demo, not every region can be entered just yet.<br><br>The localization into English is still in its first iteration.<br>If you come across any spelling mistakes, typos, or odd phrasings, please don't hesitate to report them to us.<br>Simply press <b>F2</b> anytime during gameplay. A window will open in which you can type your observations, bug reports, and feedback.<br><br><br>Enjoy your journey into the world of Drova!<br>Brian, Christian, Fabio, Kai, Johannes, and Julian. | We, here at Just2D, are still in the process of finalizing Drova. That's why most content is still a work in progress and potentially subject to change.<br><br>This demo contains only a small part of Drova which can be explored within approximately eight hours of playtime. For the demo, not every region can be entered just yet.<br><br>The localization into English is still in its first iteration.<br>If you come across any spelling mistakes, typos, or odd phrasings, please don't hesitate to report them to us.<br>Simply press <b>F2</b> anytime during gameplay. A window will open in which you can type your observations, bug reports, and feedback.<br><br><br>Enjoy your journey into the world of Drova!<br>Brian, Christian, Fabio, Kai, Johannes, and Julian. |
 | `HaveFun` | Enjoy this demo! | Enjoy this demo! |
 | `Okay` | Okay | Okay |
-
-### `Dialog/NPC_Diemo_en.loc` (1 проблем)
-
-#### ❓ Отсутствующие ключи (1)
-
-| Ключ | Английский текст |
-|------|------------------|
-| `Plh_304` | Leave the Refuge and turn north. Once you see the stone circle, continue east as if you wanted to leave the forest. Follow the path until it bends, but then keep going straight. The root is on a rise behind the Blackflame. |
 
 ### `Option_GUI_en.loc` (1 проблем)
 
