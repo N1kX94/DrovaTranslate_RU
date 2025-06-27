@@ -16,10 +16,62 @@ def has_cyrillic(text):
     """Проверяет, содержит ли текст кириллические символы"""
     return bool(re.search('[а-яё]', text.lower()))
 
+def is_technical_untranslatable(en_text, ru_text):
+    """Проверяет, является ли строка технической и не требующей перевода"""
+    en_clean = en_text.strip()
+    ru_clean = ru_text.strip()
+    
+    # Пустые строки в английском
+    if not en_clean:
+        return True
+    
+    # Клавиши клавиатуры
+    keyboard_keys = {
+        'shift', 'ctrl', 'alt', 'tab', 'enter', 'return', 'space', 'escape', 'esc',
+        'lctrl', 'rctrl', 'lalt', 'ralt', 'lshift', 'rshift', 'control',
+        'leftcontrol', 'rightcontrol', 'leftalt', 'rightalt', 'leftshift', 'rightshift'
+    }
+    if en_clean.lower() in keyboard_keys:
+        return True
+    
+    # Названия компаний и брендов
+    company_names = {
+        'deck13', 'deck13 spotlight', 'bxdxo', 'unity', 'nvidia', 'amd'
+    }
+    if en_clean.lower() in company_names:
+        return True
+    
+    # Debug строки
+    if 'debug' in en_clean.lower() and '/ignore' in en_clean.lower():
+        return True
+    
+    # Технические ID строки
+    if en_clean.startswith('Id: ') and ru_clean.startswith('Id: '):
+        return True
+    
+    # Placeholder строки
+    placeholders = {'...', '???', '-', 'n/a', 'tbd', 'todo'}
+    if en_clean.lower() in placeholders and ru_clean.lower() in placeholders:
+        return True
+    
+    # Технические переменные игрового движка
+    if 'G V A R :' in en_clean and 'G V A R :' in ru_clean:
+        return True
+    
+    # Строки вида "recipe_name_description" когда они одинаковые
+    if en_clean == ru_clean and ('_description' in en_clean or '_name' in en_clean):
+        return True
+    
+    return False
+
 def is_likely_translated(ru_text, en_text):
     """Определяет, переведен ли текст на основе различных критериев"""
     if not ru_text or not en_text:
         return False
+    
+    # Проверяем, не является ли это технической строкой
+    if is_technical_untranslatable(en_text, ru_text):
+        return True  # Считаем техническую строку "переведенной" (не требует перевода)
     
     # Если тексты идентичны, то не переведено
     if ru_text.strip().lower() == en_text.strip().lower():
@@ -288,12 +340,9 @@ def generate_translation_report(results, output_file):
                     f.write(f"#### ❓ Отсутствующие ключи ({len(issues['missing'])})\n\n")
                     f.write("| Ключ | Английский текст |\n")
                     f.write("|------|------------------|\n")
-                    for key, en_text in issues['missing'][:10]:  # Показываем первые 10
+                    for key, en_text in issues['missing']:  # Показываем все
                         safe_text = en_text.replace('|', '\\|').replace('\n', '<br>').replace('*', '\\*')
                         f.write(f"| `{key}` | {safe_text} |\n")
-                    
-                    if len(issues['missing']) > 10:
-                        f.write(f"\n*... и еще {len(issues['missing']) - 10} ключей*\n")
                     f.write("\n")
                 
                 # Непереведенные строки
@@ -301,13 +350,10 @@ def generate_translation_report(results, output_file):
                     f.write(f"#### ❌ Непереведенные строки ({len(issues['untranslated'])})\n\n")
                     f.write("| Ключ | Английский | Русский (проблема) |\n")
                     f.write("|------|------------|--------------------|\n")
-                    for key, texts in issues['untranslated'][:10]:  # Показываем первые 10
+                    for key, texts in issues['untranslated']:  # Показываем все
                         safe_en = texts['en'].replace('|', '\\|').replace('\n', '<br>').replace('*', '\\*')
                         safe_ru = texts['ru'].replace('|', '\\|').replace('\n', '<br>').replace('*', '\\*')
                         f.write(f"| `{key}` | {safe_en} | {safe_ru} |\n")
-                    
-                    if len(issues['untranslated']) > 10:
-                        f.write(f"\n*... и еще {len(issues['untranslated']) - 10} строк*\n")
                     f.write("\n")
 
 def main():
