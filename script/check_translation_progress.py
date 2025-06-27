@@ -50,12 +50,13 @@ def is_technical_untranslatable(en_text, ru_text):
         return True
     
     # Placeholder строки
-    placeholders = {'...', '???', '-', 'n/a', 'tbd', 'todo'}
+    placeholders = {'...', '???', '-', 'n/a', 'tbd', 'todo', '(...)', '(...)'}
     if en_clean.lower() in placeholders and ru_clean.lower() in placeholders:
         return True
     
-    # Технические переменные игрового движка (включая с восклицательными знаками)
-    if 'G V A R :' in en_clean and 'G V A R :' in ru_clean:
+    # Технические переменные игрового движка (разные форматы)
+    if ('G V A R :' in en_clean and 'G V A R :' in ru_clean) or \
+       ('$GVAR:' in en_clean and '$GVAR:' in ru_clean):
         return True
     
     # Placeholder'ы вида "Plh_XXX" когда они одинаковые
