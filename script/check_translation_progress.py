@@ -42,7 +42,7 @@ def is_technical_untranslatable(en_text, ru_text):
         return True
     
     # Debug строки
-    if 'debug' in en_clean.lower() and '/ignore' in en_clean.lower():
+    if 'debug' in en_clean.lower() and 'ignore' in en_clean.lower():
         return True
     
     # Технические ID строки
@@ -50,7 +50,7 @@ def is_technical_untranslatable(en_text, ru_text):
         return True
     
     # Placeholder строки
-    placeholders = {'...', '???', '-', 'n/a', 'tbd', 'todo', '(...)', '(...)'}
+    placeholders = {'...', '???', '-', 'n/a', 'tbd', 'todo', '(...)', '(...)', '_todo_'}
     if en_clean.lower() in placeholders and ru_clean.lower() in placeholders:
         return True
     
@@ -71,8 +71,17 @@ def is_technical_untranslatable(en_text, ru_text):
     if en_clean.isdigit() and ru_clean.isdigit() and en_clean == ru_clean:
         return True
     
+    # Одиночные символы пунктуации и технические символы
+    technical_symbols = {':', ';', '|', '/', '\\', '+', '-', '=', '*', '#', '@', '%', '&'}
+    if len(en_clean) == 1 and en_clean in technical_symbols and en_clean == ru_clean:
+        return True
+    
     # Строки вида "recipe_name_description" когда они одинаковые
     if en_clean == ru_clean and ('_description' in en_clean or '_name' in en_clean):
+        return True
+    
+    # Технические идентификаторы с подчеркиваниями (когда одинаковые)
+    if en_clean == ru_clean and '_' in en_clean and not has_cyrillic(en_clean):
         return True
     
     return False
