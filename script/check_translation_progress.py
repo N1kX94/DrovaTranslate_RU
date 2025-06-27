@@ -54,8 +54,20 @@ def is_technical_untranslatable(en_text, ru_text):
     if en_clean.lower() in placeholders and ru_clean.lower() in placeholders:
         return True
     
-    # Технические переменные игрового движка
+    # Технические переменные игрового движка (включая с восклицательными знаками)
     if 'G V A R :' in en_clean and 'G V A R :' in ru_clean:
+        return True
+    
+    # Placeholder'ы вида "Plh_XXX" когда они одинаковые
+    if en_clean.startswith('Plh_') and en_clean == ru_clean:
+        return True
+    
+    # Ошибки локализации
+    if '[LOCA]' in en_clean or '[Error]' in en_clean:
+        return True
+    
+    # Технические числа (только цифры)
+    if en_clean.isdigit() and ru_clean.isdigit() and en_clean == ru_clean:
         return True
     
     # Строки вида "recipe_name_description" когда они одинаковые
@@ -236,7 +248,11 @@ def analyze_file_translation(en_entries, ru_entries, en_order):
         en_text = en_entries[key]
         ru_text = ru_entries.get(key, '')
         
-        if not ru_text:
+        # Если английский текст пустой, считаем переведенным (не требует перевода)
+        if not en_text.strip():
+            analysis['translated'].append((key, {'en': en_text, 'ru': ru_text}))
+            analysis['translated_count'] += 1
+        elif not ru_text:
             # Ключ отсутствует в русском файле
             analysis['missing'].append((key, en_text))
             analysis['missing_count'] += 1
