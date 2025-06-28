@@ -498,7 +498,7 @@ bandit_generic { Бандит }
 
 Leru { Лортиз }
 
-Cat { Кот }
+Cat { Кошка }
 
 Dog { Собака }
 
@@ -506,7 +506,7 @@ Sheep { Овечка }
 
 PigletAtRoot { Поросёнок }
 
-Critter_Cat_01 { Кот }
+Critter_Cat_01 { Кошка }
 
 Critter_Dog_01 { Собака }
 
